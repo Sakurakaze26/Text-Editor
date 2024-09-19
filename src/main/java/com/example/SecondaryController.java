@@ -38,14 +38,14 @@ public class SecondaryController {
         originalContent = textArea.getText();  
         fontSizeTextField.setText("14"); 
         colorTextField.setText("black");
-        fontStyleComboBox.setItems(FXCollections.observableArrayList("Times New Roman", "Helvetica", "Century Gothic", "Sans Serif", "Slab Serif", "Arial Black", "Bookman Old Style", "Arial"));
+        fontStyleComboBox.setItems(FXCollections.observableArrayList("Times New Roman", "Helvetica", "Century Gothic", "Arial Black", "Bookman Old Style", "Arial"));
         fontStyleComboBox.getSelectionModel().selectFirst(); 
 
         textArea.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
             if (event.isControlDown() && event.getCode() == KeyCode.S) {
-                event.consume(); // Consume the event to prevent further handling
+                event.consume();
                 try {
-                    handleSaveFile(); // Call the save method
+                    handleSaveFile();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
